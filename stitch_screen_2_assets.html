@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portföyüm - Varlık Detayları</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#ffdad6",
+            "error-container": "#93000a",
+            "primary-fixed": "#72fe8f",
+            "on-primary": "#003914",
+            "tertiary": "#ffb95f",
+            "on-primary-fixed-variant": "#005320",
+            "surface-container-lowest": "#0e0e0e",
+            "surface-container-high": "#2a2a2a",
+            "surface-tint": "#53e076",
+            "on-background": "#e5e2e1",
+            "error": "#ffb4ab",
+            "on-secondary-fixed-variant": "#004395",
+            "tertiary-fixed-dim": "#ffb95f",
+            "inverse-primary": "#006e2d",
+            "surface-container": "#201f1f",
+            "on-primary-fixed": "#002108",
+            "surface-variant": "#353534",
+            "outline-variant": "#3d4a3d",
+            "primary-fixed-dim": "#53e076",
+            "on-secondary-fixed": "#001a42",
+            "inverse-on-surface": "#313030",
+            "on-tertiary-fixed": "#2a1700",
+            "background": "#131313",
+            "surface-bright": "#393939",
+            "secondary-fixed-dim": "#adc6ff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "tertiary-container": "#e08f00",
+            "on-surface": "#e5e2e1",
+            "surface-container-low": "#1c1b1b",
+            "inverse-surface": "#e5e2e1",
+            "on-surface-variant": "#bccbb9",
+            "on-secondary-container": "#e6ecff",
+            "on-tertiary": "#472a00",
+            "on-primary-container": "#004118",
+            "surface-container-highest": "#353534",
+            "surface": "#131313",
+            "primary-container": "#1db954",
+            "on-error": "#690005",
+            "tertiary-fixed": "#ffddb8",
+            "surface-dim": "#131313",
+            "on-tertiary-container": "#503100",
+            "outline": "#869585",
+            "secondary-fixed": "#d8e2ff",
+            "primary": "#53e076",
+            "secondary-container": "#0566d9",
+            "on-secondary": "#002e6a",
+            "secondary": "#adc6ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin-md": "1.5rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "margin-lg": "2.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "title-md": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+            "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #131313;
+      color: #e5e2e1;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface flex justify-center min-h-screen">
+<div class="w-full max-w-md bg-surface flex flex-col min-h-screen relative pb-28">
+<!-- Top Navigation Header (from Shared Components JSON TopAppBar guidance) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin py-space-sm flex justify-between items-center w-full">
+<div class="flex items-center gap-2">
+<button aria-label="Görünürlük" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="visibility_off">visibility_off</span>
+</button>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Portföyüm</h1>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Ara" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center hover:bg-surface-container-high transition-colors text-on-surface active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Sırala" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center hover:bg-surface-container-high transition-colors text-on-surface active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button aria-label="Varlık Ekle" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:brightness-110 active:scale-95 transition-transform duration-150 ml-1 font-bold">
+<span class="material-symbols-outlined font-bold" data-icon="add">add</span>
+</button>
+</div>
+</header>
+<!-- Horizontal Pill Filter Strip (Spotify-style aesthetic) -->
+<section class="px-margin pt-space-xs pb-space-sm overflow-x-auto hide-scrollbar flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-bright text-on-surface border border-outline-variant font-label-md text-label-md shrink-0 active:scale-95 transition-all">
+<span>Tümü</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shrink-0 font-semibold shadow-sm active:scale-95 transition-all">
+<span class="text-xs">🇹🇷</span>
+<span>BIST / TR</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/40 font-label-md text-label-md shrink-0 active:scale-95 transition-all">
+<span class="text-xs">🇺🇸</span>
+<span>ABD Borsası</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/40 font-label-md text-label-md shrink-0 active:scale-95 transition-all">
+<span class="text-xs">🪙</span>
+<span>Altın &amp; Emtia</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/40 font-label-md text-label-md shrink-0 active:scale-95 transition-all">
+<span class="text-xs">⚡</span>
+<span>Kripto</span>
+</button>
+</section>
+<!-- Main Content Canvas -->
+<main class="px-margin flex flex-col gap-space-md mt-1">
+<!-- Tab Summary Card (Segment overview) -->
+<section class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/40 flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm tracking-wider text-on-surface-variant">BIST / TR PORTFÖY TOPLAMI</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">12 Pozisyon</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline justify-between">
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold text-on-surface tracking-tight">₺524,370.00</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container/20 text-primary border border-primary/30 font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+              +₺94,210.00 (%21.8)
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tüm Zamanlar</span>
+</div>
+</div>
+<!-- Proportional mini allocation bar -->
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden flex gap-0.5 mt-1">
+<div class="h-full bg-primary" style="width: 44%"></div>
+<div class="h-full bg-secondary-container" style="width: 28%"></div>
+<div class="h-full bg-tertiary" style="width: 18%"></div>
+<div class="h-full bg-outline" style="width: 10%"></div>
+</div>
+<!-- Metric sub-stats footer -->
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<div>
+<span>Maliyet: </span>
+<span class="text-on-surface font-medium">₺430,160</span>
+</div>
+<div class="h-3 w-[1px] bg-outline-variant/40"></div>
+<div>
+<span>Günlük: </span>
+<span class="text-primary font-medium">+₺8,450 (%1.64)</span>
+</div>
+<div class="h-3 w-[1px] bg-outline-variant/40"></div>
+<div>
+<span>Nakit: </span>
+<span class="text-on-surface font-medium">₺12,450</span>
+</div>
+</div>
+</section>
+<!-- Filter Controls & View Toggle Bar -->
+<section class="flex items-center justify-between pt-1">
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-low border border-outline-variant/30 hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="font-label-md text-label-md text-on-surface font-medium">Piyasa Değerine Göre</span>
+<span class="material-symbols-outlined text-on-surface-variant text-base" data-icon="arrow_downward">arrow_downward</span>
+</button>
+<div class="flex items-center bg-surface-container-low p-0.5 rounded-lg border border-outline-variant/30">
+<button class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 duration-150">
+<span class="material-symbols-outlined text-sm" data-icon="view_list">view_list</span>
+<span>Liste</span>
+</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1 active:scale-95 duration-150">
+<span class="material-symbols-outlined text-sm" data-icon="grid_view">grid_view</span>
+<span>Kompakt</span>
+</button>
+</div>
+</section>
+<!-- Asset List (Spotify Track-list aesthetic) -->
+<section class="flex flex-col gap-2">
+<!-- Asset 1: THYAO -->
+<div class="bg-surface-container-low hover:bg-surface-container-high/60 transition-colors p-3.5 rounded-xl border border-outline-variant/30 flex items-center justify-between group active:scale-[0.99] duration-150 cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center font-bold text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="flight_takeoff">flight_takeoff</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-semibold text-on-surface leading-snug">THYAO</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant text-on-surface-variant font-label-sm text-[10px]">HAVACILIK</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Türk Hava Yolları</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant/80 mt-0.5">45 Adet • Maliyet: ₺265.40</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-title-md text-title-md font-semibold text-on-surface">₺13,959.00</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">₺310.20</span>
+<span class="inline-flex items-center gap-0.5 mt-1 px-1.5 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="north_east">north_east</span>
+              +₺2,016.00 (%16.8)
+            </span>
+</div>
+</div>
+<!-- Asset 2: ASELS -->
+<div class="bg-surface-container-low hover:bg-surface-container-high/60 transition-colors p-3.5 rounded-xl border border-outline-variant/30 flex items-center justify-between group active:scale-[0.99] duration-150 cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center font-bold text-on-surface">
+<span class="material-symbols-outlined text-secondary" data-icon="shield">shield</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-semibold text-on-surface leading-snug">ASELS</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant text-on-surface-variant font-label-sm text-[10px]">SAVUNMA</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aselsan Elektronik</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant/80 mt-0.5">120 Adet • Maliyet: ₺54.20</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-title-md text-title-md font-semibold text-on-surface">₺8,196.00</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">₺68.30</span>
+<span class="inline-flex items-center gap-0.5 mt-1 px-1.5 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="north_east">north_east</span>
+              +₺1,692.00 (%26.0)
+            </span>
+</div>
+</div>
+<!-- Asset 3: TUPRS -->
+<div class="bg-surface-container-low hover:bg-surface-container-high/60 transition-colors p-3.5 rounded-xl border border-outline-variant/30 flex items-center justify-between group active:scale-[0.99] duration-150 cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center font-bold text-on-surface">
+<span class="material-symbols-outlined text-tertiary" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-semibold text-on-surface leading-snug">TUPRS</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant text-on-surface-variant font-label-sm text-[10px]">ENERJİ</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tüpraş Rafinerileri</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant/80 mt-0.5">85 Adet • Maliyet: ₺162.00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-title-md text-title-md font-semibold text-on-surface">₺15,810.00</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">₺186.00</span>
+<span class="inline-flex items-center gap-0.5 mt-1 px-1.5 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="north_east">north_east</span>
+              +₺2,040.00 (%14.8)
+            </span>
+</div>
+</div>
+<!-- Asset 4: BIMAS -->
+<div class="bg-surface-container-low hover:bg-surface-container-high/60 transition-colors p-3.5 rounded-xl border border-outline-variant/30 flex items-center justify-between group active:scale-[0.99] duration-150 cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center font-bold text-on-surface">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-semibold text-on-surface leading-snug">BIMAS</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant text-on-surface-variant font-label-sm text-[10px]">PERAKENDE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">BİM Birleşik Mağazalar</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant/80 mt-0.5">30 Adet • Maliyet: ₺520.00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-title-md text-title-md font-semibold text-on-surface">₺14,850.00</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">₺495.00</span>
+<span class="inline-flex items-center gap-0.5 mt-1 px-1.5 py-0.5 rounded-full bg-error-container/40 text-error font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="south_east">south_east</span>
+              -₺750.00 (-%4.8)
+            </span>
+</div>
+</div>
+<!-- Asset 5: FROTO -->
+<div class="bg-surface-container-low hover:bg-surface-container-high/60 transition-colors p-3.5 rounded-xl border border-outline-variant/30 flex items-center justify-between group active:scale-[0.99] duration-150 cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center font-bold text-on-surface">
+<span class="material-symbols-outlined text-secondary" data-icon="directions_car">directions_car</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-semibold text-on-surface leading-snug">FROTO</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant text-on-surface-variant font-label-sm text-[10px]">OTOMOTİV</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ford Otomotiv Sanayi</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant/80 mt-0.5">15 Adet • Maliyet: ₺980.00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-title-md text-title-md font-semibold text-on-surface">₺16,650.00</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">₺1,110.00</span>
+<span class="inline-flex items-center gap-0.5 mt-1 px-1.5 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="north_east">north_east</span>
+              +₺1,950.00 (%13.2)
+            </span>
+</div>
+</div>
+<!-- Asset 6: EREGL -->
+<div class="bg-surface-container-low hover:bg-surface-container-high/60 transition-colors p-3.5 rounded-xl border border-outline-variant/30 flex items-center justify-between group active:scale-[0.99] duration-150 cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center font-bold text-on-surface">
+<span class="material-symbols-outlined text-outline" data-icon="hardware">hardware</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-semibold text-on-surface leading-snug">EREGL</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant text-on-surface-variant font-label-sm text-[10px]">DEMİR ÇELİK</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ereğli Demir Çelik</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant/80 mt-0.5">250 Adet • Maliyet: ₺48.10</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-title-md text-title-md font-semibold text-on-surface">₺11,975.00</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">₺47.90</span>
+<span class="inline-flex items-center gap-0.5 mt-1 px-1.5 py-0.5 rounded-full bg-error-container/30 text-error font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="south_east">south_east</span>
+              -₺50.00 (-%0.4)
+            </span>
+</div>
+</div>
+</section>
+<!-- Quick Action FAB/Pill trigger for adding transaction -->
+<div class="flex justify-center pt-2 pb-4">
+<button class="px-5 py-2.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant/40 flex items-center gap-2 font-label-md text-label-md shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary text-base" data-icon="swap_horiz">swap_horiz</span>
+<span>İşlem Geçmişini Görüntüle</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Directly derived from Shared Components JSON & Semantic Lock) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-low dark:bg-surface-container-low max-w-md left-1/2 -translate-x-1/2 shadow-[0_-8px_20px_rgba(0,0,0,0.4)]">
+<!-- Genel Bakış -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 px-3 hover:text-on-surface transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm mt-0.5">Genel Bakış</span>
+</button>
+<!-- Portföy (ACTIVE STATE) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary font-semibold py-1 px-3 hover:text-on-surface active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="pie_chart" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pie_chart</span>
+<span class="font-label-sm text-label-sm mt-0.5">Portföy</span>
+</button>
+<!-- Analiz -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 px-3 hover:text-on-surface transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="insights">insights</span>
+<span class="font-label-sm text-label-sm mt-0.5">Analiz</span>
+</button>
+<!-- Profil -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 px-3 hover:text-on-surface transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-0.5">Profil</span>
+</button>
+</nav>
+</div>
+</body></html>

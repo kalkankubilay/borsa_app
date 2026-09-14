@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Stitch - Portföy Tasarım Önizleme</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0b0b0b;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 30px 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 26px;
+      color: #1DB954;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    p {
+      color: #A7A7A7;
+      font-size: 15px;
+    }
+    .screens-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 36px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .screen-card {
+      background: #141414;
+      border: 1px solid #282828;
+      border-radius: 24px;
+      overflow: hidden;
+      width: 420px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+    }
+    .screen-header {
+      padding: 16px 20px;
+      background: #181818;
+      border-bottom: 1px solid #262626;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .screen-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .tag {
+      font-size: 11px;
+      background: rgba(29, 185, 84, 0.15);
+      color: #1DB954;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .screen-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .links {
+      padding: 14px 20px;
+      background: #121212;
+      border-top: 1px solid #242424;
+      text-align: center;
+    }
+    .links a {
+      color: #1DB954;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Google Stitch — Portföyüm Tasarımları</h1>
+    <p>Spotify Dark Minimalist Arayüz & Segmentli Portföy Deneyimi</p>
+  </header>
+
+  <div class="screens-container">
+    <!-- Screen 1 -->
+    <div class="screen-card">
+      <div class="screen-header">
+        <span class="screen-title">1. Konsolide Ana Sayfa</span>
+        <span class="tag">Google Stitch AI</span>
+      </div>
+      <img src="stitch_screen_1_home.png" alt="Ekran 1 - Ana Sayfa" class="screen-img">
+      <div class="links">
+        <a href="stitch_screen_1_home.html" target="_blank">HTML Kod Önizlemesini Aç ↗</a>
+      </div>
+    </div>
+
+    <!-- Screen 2 -->
+    <div class="screen-card">
+      <div class="screen-header">
+        <span class="screen-title">2. Varlık Detayı & Sekmeli Portföy</span>
+        <span class="tag">Google Stitch AI</span>
+      </div>
+      <img src="stitch_screen_2_assets.png" alt="Ekran 2 - Varlık Detayları" class="screen-img">
+      <div class="links">
+        <a href="stitch_screen_2_assets.html" target="_blank">HTML Kod Önizlemesini Aç ↗</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
