@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/portfolio_asset.dart';
 import '../models/trade_transaction.dart';
+import '../models/dividend_income.dart';
 
 class MockPortfolioData {
   static const double usdToTry = 34.25;
@@ -110,10 +111,12 @@ class MockPortfolioData {
 
 class PortfolioProvider extends ChangeNotifier {
   static const String _storageKey = 'saved_portfolio_assets';
+  static const String _dividendStorageKey = 'saved_portfolio_dividends';
   static const String _initializedKey = 'portfolio_initialized';
 
   List<PortfolioAsset> _assets = [];
   final List<TradeTransaction> _transactions = [];
+  List<DividendIncome> _dividends = [];
   bool _hideBalance = false;
   String _selectedCurrency = 'TRY'; // 'TRY' veya 'USD'
 
@@ -123,6 +126,7 @@ class PortfolioProvider extends ChangeNotifier {
 
   List<PortfolioAsset> get assets => _assets;
   List<TradeTransaction> get transactions => _transactions;
+  List<DividendIncome> get dividends => _dividends;
   bool get hideBalance => _hideBalance;
   String get selectedCurrency => _selectedCurrency;
 
@@ -134,8 +138,42 @@ class PortfolioProvider extends ChangeNotifier {
       if (!isInitialized) {
         // İlk açılışta mock verilerle başla ve kaydet
         _assets = List.from(MockPortfolioData.assets);
+        // Örnek BIST temettü gelirleri
+        _dividends = [
+          DividendIncome(
+            id: 'div_tuprs_1',
+            symbol: 'TUPRS',
+            companyName: 'Tüpraş Rafinerileri',
+            amount: 875.50,
+            currency: 'TRY',
+            date: DateTime(2024, 3, 28),
+            broker: 'Midas',
+            note: '1. Taksit Temettü Ödemesi',
+          ),
+          DividendIncome(
+            id: 'div_thyao_1',
+            symbol: 'THYAO',
+            companyName: 'Türk Hava Yolları',
+            amount: 420.00,
+            currency: 'TRY',
+            date: DateTime(2024, 4, 15),
+            broker: 'Midas',
+            note: 'Nakit Kâr Payı Dağıtımı',
+          ),
+          DividendIncome(
+            id: 'div_asels_1',
+            symbol: 'ASELS',
+            companyName: 'Aselsan Elektronik',
+            amount: 215.80,
+            currency: 'TRY',
+            date: DateTime(2024, 5, 22),
+            broker: 'Ziraat',
+            note: 'Nakit Kâr Payı',
+          ),
+        ];
         await prefs.setBool(_initializedKey, true);
         await _saveToStorage();
+        await _saveDividendsToStorage();
       } else {
         // Daha önce açılmış; kullanıcının kaydettiği veya sildiği listeyi yükle
         final savedJson = prefs.getString(_storageKey);
@@ -145,10 +183,18 @@ class PortfolioProvider extends ChangeNotifier {
         } else {
           _assets = [];
         }
+
+        final divJson = prefs.getString(_dividendStorageKey);
+        if (divJson != null && divJson.isNotEmpty) {
+          final List<dynamic> divDecoded = jsonDecode(divJson);
+          _dividends = divDecoded.map((item) => DividendIncome.fromJson(item as Map<String, dynamic>)).toList();
+        } else {
+          _dividends = [];
+        }
       }
     } catch (e) {
-      // Hata durumunda varsayılan
       _assets = [];
+      _dividends = [];
     }
     notifyListeners();
   }
@@ -160,6 +206,56 @@ class PortfolioProvider extends ChangeNotifier {
       await prefs.setString(_storageKey, jsonString);
       await prefs.setBool(_initializedKey, true);
     } catch (_) {}
+  }
+
+  Future<void> _saveDividendsToStorage() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = jsonEncode(_dividends.map((d) => d.toJson()).toList());
+      await prefs.setString(_dividendStorageKey, jsonString);
+    } catch (_) {}
+  }
+
+  /// Yeni temettü geliri ekleme (Manuel veya ekstre)
+  void addDividend({
+    required String symbol,
+    required String companyName,
+    required double amount,
+    String currency = 'TRY',
+    required DateTime date,
+    String broker = 'Midas',
+    String note = '',
+  }) {
+    _dividends.insert(
+      0,
+      DividendIncome(
+        id: 'div_${DateTime.now().millisecondsSinceEpoch}',
+        symbol: symbol.trim().toUpperCase(),
+        companyName: companyName.trim().isNotEmpty ? companyName.trim() : symbol.trim().toUpperCase(),
+        amount: amount,
+        currency: currency,
+        date: date,
+        broker: broker,
+        note: note,
+      ),
+    );
+    _saveDividendsToStorage();
+    notifyListeners();
+  }
+
+  /// Temettü kaydını silme
+  void removeDividend(String id) {
+    _dividends.removeWhere((d) => d.id == id);
+    _saveDividendsToStorage();
+    notifyListeners();
+  }
+
+  /// Toplam Temettü Geliri (TRY Cinsinden)
+  double get totalDividendIncomeTry {
+    return _dividends.fold(0.0, (sum, d) {
+      final amt = d.currency == 'USD' ? d.amount * MockPortfolioData.usdToTry : d.amount;
+      return sum + amt;
+    });
   }
 
   void toggleHideBalance() {
@@ -227,8 +323,12 @@ class PortfolioProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Ekstreden gelen özet hisseleri mevcut portföye akıllıca entegre eder
-  void importStatementAssets(List<PortfolioAsset> importedAssets, List<TradeTransaction> importedTxs) {
+  /// Ekstreden gelen özet hisseleri ve temettüleri mevcut portföye akıllıca entegre eder
+  void importStatementAssets(
+    List<PortfolioAsset> importedAssets,
+    List<TradeTransaction> importedTxs, {
+    List<DividendIncome> importedDividends = const [],
+  }) {
     for (var imported in importedAssets) {
       final existingIndex = _assets.indexWhere((a) => a.symbol.toUpperCase() == imported.symbol.toUpperCase());
       if (existingIndex >= 0) {
@@ -238,6 +338,10 @@ class PortfolioProvider extends ChangeNotifier {
       }
     }
     _transactions.addAll(importedTxs);
+    if (importedDividends.isNotEmpty) {
+      _dividends.insertAll(0, importedDividends);
+      _saveDividendsToStorage();
+    }
     _saveToStorage();
     notifyListeners();
   }

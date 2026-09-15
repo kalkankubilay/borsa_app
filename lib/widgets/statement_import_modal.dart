@@ -92,6 +92,7 @@ YATIRIM İŞLEMLERİ (01/08/23 - 31/08/23)
       widget.provider.importStatementAssets(
         _parsedResult!.summaryAssets,
         _parsedResult!.transactions,
+        importedDividends: _parsedResult!.dividends,
       );
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
@@ -102,7 +103,7 @@ YATIRIM İŞLEMLERİ (01/08/23 - 31/08/23)
               const Icon(Icons.check_circle_rounded, color: SpotifyTheme.green, size: 20),
               const SizedBox(width: 10),
               Text(
-                '${_parsedResult!.summaryAssets.length} adet hisse portföyünüze aktarıldı!',
+                '${_parsedResult!.summaryAssets.length} adet hisse${_parsedResult!.dividends.isNotEmpty ? " ve ${_parsedResult!.dividends.length} temettü" : ""} portföyünüze aktarıldı!',
                 style: const TextStyle(color: SpotifyTheme.textPrimary),
               ),
             ],

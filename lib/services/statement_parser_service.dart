@@ -2,10 +2,12 @@ import 'dart:typed_data';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import '../models/portfolio_asset.dart';
 import '../models/trade_transaction.dart';
+import '../models/dividend_income.dart';
 
 class ParsedStatementResult {
   final List<PortfolioAsset> summaryAssets;
   final List<TradeTransaction> transactions;
+  final List<DividendIncome> dividends;
   final String broker;
   final String customerName;
   final String dateRange;
@@ -13,6 +15,7 @@ class ParsedStatementResult {
   ParsedStatementResult({
     required this.summaryAssets,
     required this.transactions,
+    this.dividends = const [],
     this.broker = 'Midas',
     this.customerName = '',
     this.dateRange = '',
@@ -153,9 +156,38 @@ class StatementParserService {
       );
     }
 
+    // --- 3. TEMETTÜ GELİRLERİ (Kâr Payı Ödemeleri) Ayrıştırma ---
+    // Örnek Ekstre Kalıbı: "24/05/23 14:20:00 Temettü Ödemesi TUPRS 125,50 TRY" veya "Kâr Payı TUPRS"
+    List<DividendIncome> dividends = [];
+    final dividendRegex = RegExp(
+      r'(\d{2}/\d{2}/\d{2}(?:\s+\d{2}:\d{2}:\d{2})?)\s+.*?(?:Temettü|Kâr Payı|Kar Payı|Dividend).*?([A-Z0-9.]+)\s+.*?([\d,.]+)\s*(TRY|USD)',
+      caseSensitive: false,
+    );
+
+    for (var match in dividendRegex.allMatches(text)) {
+      final dateStr = match.group(1)!;
+      final symbol = match.group(2)!;
+      final amount = _parsePrice(match.group(3)!);
+      final currency = match.group(4)!.toUpperCase();
+
+      dividends.add(
+        DividendIncome(
+          id: 'div_midas_${symbol}_${DateTime.now().millisecondsSinceEpoch}',
+          symbol: symbol,
+          companyName: symbol,
+          amount: amount,
+          currency: currency,
+          date: _parseDate(dateStr),
+          broker: 'Midas',
+          note: 'Midas Ekstre Temettü Dağıtımı',
+        ),
+      );
+    }
+
     return ParsedStatementResult(
       summaryAssets: assets,
       transactions: transactions,
+      dividends: dividends,
       customerName: customerName,
       dateRange: dateRange,
     );

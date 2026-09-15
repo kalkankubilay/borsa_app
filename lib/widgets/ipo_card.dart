@@ -30,9 +30,9 @@ class IpoCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Top Row: Symbol, Status Chip & Dates
+                // Üst Kısım: Sembol, Şirket Adı ve Statü Rozeti
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -50,52 +50,30 @@ class IpoCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: 12),
                     Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            ipo.companyName,
-                            style: const TextStyle(
-                              color: SpotifyTheme.textPrimary,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          const SizedBox(height: 2),
-                          Row(
-                            children: [
-                              const Icon(Icons.calendar_today_outlined, size: 12, color: SpotifyTheme.textSecondary),
-                              const SizedBox(width: 4),
-                              Expanded(
-                                child: Text(
-                                  ipo.dates,
-                                  style: const TextStyle(
-                                    color: SpotifyTheme.textSecondary,
-                                    fontSize: 12,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                      child: Text(
+                        ipo.companyName,
+                        style: const TextStyle(
+                          color: SpotifyTheme.textPrimary,
+                          fontSize: 14.5,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
+                    const SizedBox(width: 8),
                     _buildStatusBadge(ipo.status),
                   ],
                 ),
-                const SizedBox(height: 14),
+                const SizedBox(height: 12),
 
-                // Key metrics row (Arz Fiyatı, Canlı Borsa Fiyatı / Lot, Yöntem)
+                // Metrikler: Arz Fiyatı | Lot Sayısı | Dağıtım Türü (veya Canlı Fiyat)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                   decoration: BoxDecoration(
-                    color: SpotifyTheme.background.withOpacity(0.6),
+                    color: SpotifyTheme.background.withValues(alpha: 0.6),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
@@ -117,44 +95,12 @@ class IpoCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 12),
-
-                // Fund Usage Highlight Preview
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Icon(Icons.savings_outlined, color: SpotifyTheme.green, size: 16),
-                    const SizedBox(width: 6),
-                    Expanded(
-                      child: Text(
-                        'Gelir Nereye Harcanacak: ${_getFirstFundUsageSummary(ipo.fundUsage)}',
-                        style: TextStyle(
-                          color: SpotifyTheme.textSecondary.withOpacity(0.9),
-                          fontSize: 11.5,
-                          height: 1.3,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    const Icon(Icons.chevron_right, color: SpotifyTheme.textSecondary, size: 18),
-                  ],
-                ),
               ],
             ),
           ),
         ),
       ),
     );
-  }
-
-  String _getFirstFundUsageSummary(String text) {
-    if (text.isEmpty) return 'İzahname bekleniyor.';
-    final clean = text.replaceAll('\n', ' ').replaceAll('•', '').replaceAll('-', '').trim();
-    if (clean.length > 100) {
-      return '${clean.substring(0, 100)}...';
-    }
-    return clean;
   }
 
   Widget _buildMetricCol(String label, String val, {bool isGreen = false}) {
@@ -165,7 +111,7 @@ class IpoCard extends StatelessWidget {
           label,
           style: const TextStyle(
             color: SpotifyTheme.textSecondary,
-            fontSize: 10,
+            fontSize: 10.5,
           ),
         ),
         const SizedBox(height: 2),
@@ -265,9 +211,9 @@ class IpoCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: col.withOpacity(0.15),
+        color: col.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: col.withOpacity(0.4)),
+        border: Border.all(color: col.withValues(alpha: 0.4)),
       ),
       child: Text(
         label,

@@ -4,6 +4,7 @@ import '../providers/portfolio_provider.dart';
 import '../theme/spotify_theme.dart';
 import '../models/portfolio_asset.dart';
 import '../widgets/statement_import_modal.dart';
+import '../widgets/dividend_detail_sheet.dart';
 
 class HomeScreen extends StatelessWidget {
   final PortfolioProvider provider;
@@ -317,7 +318,134 @@ class HomeScreen extends StatelessWidget {
             currencyFormatter: currencyFormatter,
             onTap: () => onNavigateToSegment(3), // Gold Tab
           ),
+
+          const SizedBox(height: 6),
+
+          // 5. Section: Temettü Gelirleri Kartı
+          _buildDividendSummaryCard(
+            context: context,
+            totalDividend: provider.totalDividendIncomeTry,
+            dividendCount: provider.dividends.length,
+            currencyFormatter: currencyFormatter,
+            onTap: () => DividendDetailSheet.show(context, provider),
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildDividendSummaryCard({
+    required BuildContext context,
+    required double totalDividend,
+    required int dividendCount,
+    required NumberFormat currencyFormatter,
+    required VoidCallback onTap,
+  }) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+      decoration: BoxDecoration(
+        color: SpotifyTheme.cardSurface,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: SpotifyTheme.border, width: 0.8),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(16),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(16),
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: SpotifyTheme.green.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(
+                    Icons.monetization_on_rounded,
+                    color: SpotifyTheme.green,
+                    size: 24,
+                  ),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          const Text(
+                            'Temettü Gelirleri',
+                            style: TextStyle(
+                              color: SpotifyTheme.textPrimary,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: SpotifyTheme.green.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Text(
+                              '$dividendCount Dağıtım',
+                              style: const TextStyle(
+                                color: SpotifyTheme.green,
+                                fontSize: 10.5,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 3),
+                      const Text(
+                        'BIST ve Midas kâr payı kazançları',
+                        style: TextStyle(
+                          color: SpotifyTheme.textSecondary,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      provider.hideBalance ? '•••' : '+${currencyFormatter.format(totalDividend)}',
+                      style: const TextStyle(
+                        color: SpotifyTheme.green,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Detay',
+                          style: TextStyle(
+                            color: SpotifyTheme.textSecondary,
+                            fontSize: 11,
+                          ),
+                        ),
+                        Icon(Icons.chevron_right, color: SpotifyTheme.textSecondary, size: 14),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
