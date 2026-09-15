@@ -5,6 +5,8 @@ import 'theme/spotify_theme.dart';
 import 'screens/home_screen.dart';
 import 'screens/portfolio_screen.dart';
 
+import 'screens/ipo_screen.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
@@ -76,6 +78,7 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
               provider: _provider,
               initialTabIndex: _portfolioInitialTab,
             ),
+            const IpoScreen(),
           ],
         ),
       ),
@@ -110,6 +113,11 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
               icon: Icon(Icons.pie_chart_outline_rounded, color: SpotifyTheme.textSecondary),
               selectedIcon: Icon(Icons.pie_chart_rounded, color: SpotifyTheme.green),
               label: 'Portföyüm',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.rocket_launch_outlined, color: SpotifyTheme.textSecondary),
+              selectedIcon: Icon(Icons.rocket_launch_rounded, color: SpotifyTheme.green),
+              label: 'Halka Arz',
             ),
           ],
         ),

@@ -10,6 +10,7 @@ class SpotifyTheme {
   
   static const Color border = Color(0xFF2E2E2E);
   static const Color borderLight = Color(0x1FFFFFFF);
+  static const Color cardSurface = Color(0xFF181818);
 
   // Accents
   static const Color green = Color(0xFF1DB954); // Spotify Emerald

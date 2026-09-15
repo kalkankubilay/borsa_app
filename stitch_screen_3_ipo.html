@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halka Arz Takvimi — Borsa İstanbul</title>
+  <style>
+    :root {
+      --bg: #121212;
+      --surface: #181818;
+      --card: #1e1e1e;
+      --green: #1DB954;
+      --green-tint: rgba(29, 185, 84, 0.15);
+      --yellow: #FFB800;
+      --yellow-tint: rgba(255, 184, 0, 0.15);
+      --border: #2E2E2E;
+      --text-main: #FFFFFF;
+      --text-muted: #A7A7A7;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 20px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 20px;
+    }
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .filter-chips {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .chip.active {
+      background: var(--green);
+      color: #000;
+      font-weight: 700;
+      border-color: var(--green);
+    }
+    .ipo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    }
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .symbol-badge {
+      background: #242424;
+      color: var(--green);
+      font-weight: 800;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: inline-block;
+    }
+    .status-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+    .status-active {
+      background: var(--green-tint);
+      color: var(--green);
+      border: 1px solid rgba(29, 185, 84, 0.4);
+    }
+    .status-upcoming {
+      background: var(--yellow-tint);
+      color: var(--yellow);
+      border: 1px solid rgba(255, 184, 0, 0.4);
+    }
+    .company-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 8px;
+      color: #fff;
+    }
+    .dates {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .metrics-box {
+      background: #121212;
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 0;
+      border: 1px solid #222;
+    }
+    .metric {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-label {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+    .metric-val {
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .metric-val.green {
+      color: var(--green);
+    }
+    /* Gelirin Harcanacağı Yer Bölümü */
+    .fund-usage-container {
+      background: rgba(29, 185, 84, 0.05);
+      border: 1px solid rgba(29, 185, 84, 0.25);
+      border-radius: 12px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+    .fund-usage-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--green);
+      font-size: 11.5px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .fund-usage-text {
+      font-size: 12px;
+      color: #e0e0e0;
+      line-height: 1.45;
+      white-space: pre-line;
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 11px;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .nav-item.active {
+      color: var(--green);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title-row">
+      <div>
+        <h1>Halka Arz Takvimi</h1>
+        <div class="subtitle">Borsa İstanbul güncel & yaklaşan halka arzlar</div>
+      </div>
+      <button style="background:none; border:none; color:var(--green); font-size:18px; cursor:pointer;">⟳</button>
+    </div>
+
+    <div class="filter-chips">
+      <div class="chip active">Tümü (5)</div>
+      <div class="chip">Talep Toplanan (1)</div>
+      <div class="chip">Yaklaşan (1)</div>
+      <div class="chip">Tamamlanan (3)</div>
+    </div>
+  </header>
+
+  <!-- 1. Halka Arz Kartı -->
+  <div class="ipo-card">
+    <div class="card-head">
+      <div>
+        <span class="symbol-badge">NETGL</span>
+        <div class="company-title">Net Global Endüstriyel Yatırımlar A.Ş.</div>
+        <div class="dates">📅 9 - 10 - 11 Eylül 2026</div>
+      </div>
+      <span class="status-badge status-active">Talep Toplanıyor</span>
+    </div>
+
+    <div class="metrics-box">
+      <div class="metric">
+        <span class="metric-label">Arz Fiyatı</span>
+        <span class="metric-val green">25,52 TL</span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">Dağıtılacak Pay</span>
+        <span class="metric-val">87.500.000 Lot</span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">Yöntem</span>
+        <span class="metric-val">Eşit Dağıtım</span>
+      </div>
+    </div>
+
+    <!-- Halka Arz Gelirinin Harcanacağı Yer -->
+    <div class="fund-usage-container">
+      <div class="fund-usage-header">
+        <span>💰 Halka Arz Gelirinin Kullanım Yeri</span>
+      </div>
+      <div class="fund-usage-text">
+• %25-35 İşletme sermayesi ihtiyaçları.
+• %20-30 Vagon fabrikası inşaatının tamamlanması ve makine ekipmanı temini.
+• %20-30 Banka kredilerinin azaltılması ve finansman maliyetlerinin düşürülmesi.
+• %15-25 Mevcut yatırımlara ilişkin kapasite artışları ve koruge boru makine alımı.
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Halka Arz Kartı -->
+  <div class="ipo-card">
+    <div class="card-head">
+      <div>
+        <span class="symbol-badge">KAPEX</span>
+        <div class="company-title">Kapeks Kimya Sanayi A.Ş.</div>
+        <div class="dates">📅 Yakında / SPK Onayı Bekleniyor</div>
+      </div>
+      <span class="status-badge status-upcoming">Yaklaşan</span>
+    </div>
+
+    <div class="metrics-box">
+      <div class="metric">
+        <span class="metric-label">Arz Fiyatı</span>
+        <span class="metric-val green">Taslak</span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">Dağıtılacak Pay</span>
+        <span class="metric-val">50.000.000 Lot</span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">Yöntem</span>
+        <span class="metric-val">Eşit Dağıtım</span>
+      </div>
+    </div>
+
+    <div class="fund-usage-container">
+      <div class="fund-usage-header">
+        <span>💰 Halka Arz Gelirinin Kullanım Yeri</span>
+      </div>
+      <div class="fund-usage-text">
+• %40 Yeni kimya üretim tesisi ve reaktör kapasite artırımı.
+• %30 İhracat potansiyelini yükseltecek lojistik ve depolama ağı yatırımı.
+• %30 Hammadde tedariki ve işletme sermayesi tahsisi.
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 60px;"></div>
+
+  <!-- 3 Butonlu Alt Gezinme Barı -->
+  <div class="bottom-nav">
+    <div class="nav-item">
+      <span>🏠</span>
+      <span>Genel Bakış</span>
+    </div>
+    <div class="nav-item">
+      <span>📊</span>
+      <span>Portföyüm</span>
+    </div>
+    <div class="nav-item active">
+      <span>🚀</span>
+      <span>Halka Arz</span>
+    </div>
+  </div>
+
+</body>
+</html>

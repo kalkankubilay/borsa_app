@@ -2,28 +2,28 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/portfolio_asset.dart';
 
+class MarketPriceResult {
+  final double price;
+  final double? changePercent;
+
+  const MarketPriceResult({required this.price, this.changePercent});
+}
+
 class MarketPriceService {
-  /// Yahoo Finance / Kamu Açık Finans Endpointlerinden canlı fiyat çeker
-  static Future<double?> fetchLivePrice(String symbol, AssetMarket market) async {
+  /// Yahoo Finance / Kamu Açık Finans Endpointlerinden canlı fiyat ve günlük değişim yüzdesi çeker
+  static Future<MarketPriceResult?> fetchLiveQuote(String symbol, AssetMarket market) async {
     final clean = symbol.trim().toUpperCase();
 
-    // 1. Yahoo Finance Sembol Formatı Oluşturma
     String ticker;
     switch (market) {
       case AssetMarket.tr:
-        // BIST hisseleri Yahoo Finance üzerinde .IS uzantılıdır: SISE.IS, THYAO.IS, BIMAS.IS
         ticker = clean.endsWith('.IS') ? clean : '$clean.IS';
         break;
       case AssetMarket.us:
-        ticker = clean; // AAPL, NVDA, MSFT
+        ticker = clean;
         break;
       case AssetMarket.gold:
-        // Ons Altın: GC=F veya Gram altın karşılığı
-        if (clean == 'ALTINS1') {
-          ticker = 'ALTINS1.IS';
-        } else {
-          ticker = 'GC=F';
-        }
+        ticker = clean == 'ALTINS1' ? 'ALTINS1.IS' : 'GC=F';
         break;
     }
 
@@ -38,24 +38,40 @@ class MarketPriceService {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
           'Accept': 'application/json',
         },
-      ).timeout(const Duration(seconds: 5));
+      ).timeout(const Duration(seconds: 4));
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         final meta = data['chart']?['result']?[0]?['meta'];
         if (meta != null) {
           final regularMarketPrice = meta['regularMarketPrice'];
+          final previousClose = meta['chartPreviousClose'] ?? meta['previousClose'];
+          
           if (regularMarketPrice is num) {
-            return regularMarketPrice.toDouble();
+            double? change;
+            if (previousClose is num && previousClose > 0) {
+              change = ((regularMarketPrice - previousClose) / previousClose) * 100;
+            }
+            return MarketPriceResult(
+              price: regularMarketPrice.toDouble(),
+              changePercent: change,
+            );
           }
         }
       }
-    } catch (_) {
-      // Ağ hatası veya endpoint kısıtı durumunda yedek mekanizmaya geç
-    }
+    } catch (_) {}
 
-    // 2. Yedek Piyasa Simülasyonu (Örn: hafta sonu borsa kapalıysa veya internet yoksa gerçekçi güncel BIST fiyatları)
-    return _getFallbackPrice(clean);
+    final fallback = _getFallbackPrice(clean);
+    if (fallback != null) {
+      return MarketPriceResult(price: fallback, changePercent: 0.0);
+    }
+    return null;
+  }
+
+  /// Basit uyumluluk metodu
+  static Future<double?> fetchLivePrice(String symbol, AssetMarket market) async {
+    final quote = await fetchLiveQuote(symbol, market);
+    return quote?.price;
   }
 
   static double? _getFallbackPrice(String symbol) {
@@ -71,6 +87,12 @@ class MarketPriceService {
       'MSFT': 428.00,
       'ALTINS1': 32.40,
       'ALTIN.G': 2940.00,
+      // Yeni halka arzlar için son işlem fiyatları
+      'NETGL': 28.10,
+      'INTET': 37.60,
+      'BKRGY': 20.46,
+      'VEYAS': 46.20,
+      'KPEKS': 15.30,
     };
     return fallbackPrices[symbol];
   }
