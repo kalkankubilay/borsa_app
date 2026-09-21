@@ -1,5 +1,19 @@
 [
   {
+    "id": "prone",
+    "symbol": "PRONE",
+    "companyName": "Pronet Güvenlik Hizmetleri A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "459.764.198 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Yıldız Pazar",
+    "leadManager": "Ak Yatırım Menkul Değerler A.Ş.",
+    "fundUsage": "- %50 Büyüme yatırımları. \n- %50 Finansal borçluluğun azaltılması. \n* Taslak İzahname, Sayfa 223.",
+    "detailUrl": "https://halkarz.com/pronet-guvenlik-hizmetleri-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "motor",
     "symbol": "MOTOR",
     "companyName": "Motor Aşin Otomotiv Bilgisayar San. ve Tic. A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "İntegral Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %80 Yatırım harcamaları. \n- %20 İşletme sermayesi. \n* Taslak İzahname, Sayfa 193.",
     "detailUrl": "https://halkarz.com/recber-kablo-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "parte",
-    "symbol": "PARTE",
-    "companyName": "Parteks Kağıt Endüstrisi A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "92.250.000 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Yıldız Pazar",
-    "leadManager": "İnfo Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "- %60 Osb fabrikasında yatırım ve kapasite artırımı. \n- %20 İşletme sermayesi. \n- %10 Yenilenebilir enerji yatırımları. \n- %10 Dijitalleşme ve üretimde verimlilik artırımı finansmanı. \n* Taslak İzahname, Sayfa 193.",
-    "detailUrl": "https://halkarz.com/parteks-kagit-endustrisi-a-s/",
     "status": "upcoming"
   },
   {
