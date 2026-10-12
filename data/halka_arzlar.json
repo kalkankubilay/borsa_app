@@ -1,5 +1,19 @@
 [
   {
+    "id": "divap",
+    "symbol": "DIVAP",
+    "companyName": "Divapan Entegre Ağaç Panel Sanayi Tic. A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "Taslak İzahname",
+    "distributionMethod": "Eşit Dağıtım (Taslak)",
+    "market": "Borsa İstanbul",
+    "leadManager": "Konsorsiyum Lideri Belirleniyor",
+    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
+    "detailUrl": "https://halkarz.com/divapan-entegre-agac-panel-sanayi-tic-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "prone",
     "symbol": "PRONE",
     "companyName": "Pronet Güvenlik Hizmetleri A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Tera Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %90 Yeni girişim sermayesi yatırımları. \n- %10 İşletme sermayesi. \n* Taslak İzahname, Sayfa 193.",
     "detailUrl": "https://halkarz.com/tera-girisim-sermayesi-yatirim-ortakligi-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "reçbe",
-    "symbol": "REÇBE",
-    "companyName": "Reçber Kablo A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "192.000.000 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Borsa İstanbul",
-    "leadManager": "İntegral Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "- %80 Yatırım harcamaları. \n- %20 İşletme sermayesi. \n* Taslak İzahname, Sayfa 193.",
-    "detailUrl": "https://halkarz.com/recber-kablo-a-s/",
     "status": "upcoming"
   },
   {
