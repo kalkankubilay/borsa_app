@@ -1,5 +1,19 @@
 [
   {
+    "id": "hayri",
+    "symbol": "HAYRI",
+    "companyName": "Hayri Ögelman Madencilik A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "Taslak İzahname",
+    "distributionMethod": "Eşit Dağıtım (Taslak)",
+    "market": "Borsa İstanbul",
+    "leadManager": "Konsorsiyum Lideri Belirleniyor",
+    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
+    "detailUrl": "https://halkarz.com/hayri-ogelman-madencilik-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "divap",
     "symbol": "DIVAP",
     "companyName": "Divapan Entegre Ağaç Panel Sanayi Tic. A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Konsorsiyum Lideri Belirleniyor",
     "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
     "detailUrl": "https://halkarz.com/ronesans-altyapi-sistemleri-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "tera",
-    "symbol": "TERA",
-    "companyName": "Tera Girişim Sermayesi Yatırım Ortaklığı A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "17.000.000 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Ana Pazar",
-    "leadManager": "Tera Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "- %90 Yeni girişim sermayesi yatırımları. \n- %10 İşletme sermayesi. \n* Taslak İzahname, Sayfa 193.",
-    "detailUrl": "https://halkarz.com/tera-girisim-sermayesi-yatirim-ortakligi-a-s/",
     "status": "upcoming"
   },
   {
