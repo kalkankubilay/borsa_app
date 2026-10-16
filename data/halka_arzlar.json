@@ -1,5 +1,19 @@
 [
   {
+    "id": "önen",
+    "symbol": "ÖNEN",
+    "companyName": "Önen Gıda Sanayi A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "120.000.000 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Borsa İstanbul",
+    "leadManager": "Yapı Kredi Yatırım Menkul Değerler A.Ş.",
+    "fundUsage": "- %20-30 İşletme sermayesi. \n- %70-80 Yatırımların finansmanı. \n* Taslak İzahname, Sayfa 190.",
+    "detailUrl": "https://halkarz.com/onen-gida-sanayi-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "hayri",
     "symbol": "HAYRI",
     "companyName": "Hayri Ögelman Madencilik A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Bulls Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %100 İşletme sermayesi. \n* Taslak İzahname, Sayfa 182.",
     "detailUrl": "https://halkarz.com/bulls-yatirim-menkul-degerler-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "rönes",
-    "symbol": "RÖNES",
-    "companyName": "Rönesans Altyapı Sistemleri A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "329.256.572 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Borsa İstanbul",
-    "leadManager": "Konsorsiyum Lideri Belirleniyor",
-    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
-    "detailUrl": "https://halkarz.com/ronesans-altyapi-sistemleri-a-s/",
     "status": "upcoming"
   },
   {
