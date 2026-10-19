@@ -1,5 +1,33 @@
 [
   {
+    "id": "i̇nter",
+    "symbol": "İNTER",
+    "companyName": "İnternet Tekstil Sanayii ve Tic. A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "85.000.000 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Borsa İstanbul",
+    "leadManager": "Vakıf Yatırım Menkul Değerler A.Ş.",
+    "fundUsage": "- %45-55 Marka, üretim, lojistik ve dijital altyapı yatırımları. \n- %35-40 İşletme sermayesi. \n- %5-20 Enerji verimliliği ve sürdürülebilirlik yatırımları. \n* Taslak İzahname, Sayfa 258.",
+    "detailUrl": "https://halkarz.com/internet-tekstil-sanayii-ve-tic-a-s/",
+    "status": "upcoming"
+  },
+  {
+    "id": "hayri",
+    "symbol": "HAYRI",
+    "companyName": "Hayri Ögelman Madencilik A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "375.000.000 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Borsa İstanbul",
+    "leadManager": "Vakıf Yatırım Menkul Değerler A.Ş.",
+    "fundUsage": "- %60 Ferrokrom üretim tesisi yatırımının finansmanı. \n- %20 Şirket ve/veya maden ruhsat/Lisanslarının alımı. \n- %20 İşletme sermayesi. \n* Taslak İzahname, Sayfa 229.",
+    "detailUrl": "https://halkarz.com/hayri-ogelman-madencilik-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "önen",
     "symbol": "ÖNEN",
     "companyName": "Önen Gıda Sanayi A.Ş.",
@@ -11,20 +39,6 @@
     "leadManager": "Yapı Kredi Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %20-30 İşletme sermayesi. \n- %70-80 Yatırımların finansmanı. \n* Taslak İzahname, Sayfa 190.",
     "detailUrl": "https://halkarz.com/onen-gida-sanayi-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "hayri",
-    "symbol": "HAYRI",
-    "companyName": "Hayri Ögelman Madencilik A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "Taslak İzahname",
-    "distributionMethod": "Eşit Dağıtım (Taslak)",
-    "market": "Borsa İstanbul",
-    "leadManager": "Konsorsiyum Lideri Belirleniyor",
-    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
-    "detailUrl": "https://halkarz.com/hayri-ogelman-madencilik-a-s/",
     "status": "upcoming"
   },
   {
@@ -123,20 +137,6 @@
     "leadManager": "Kuveyt Türk Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %25 Planlanan yeni yatırımları. \n- %40 İşletme sermayesi. \n- %35 Borçların ödenmesi. \n* Taslak İzahname, Sayfa 222.",
     "detailUrl": "https://halkarz.com/sinbo-kucuk-ev-aletleri-san-ve-tic-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "bulls",
-    "symbol": "BULLS",
-    "companyName": "Bulls Yatırım Menkul Değerler A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "100.000.000 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Borsa İstanbul",
-    "leadManager": "Bulls Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "- %100 İşletme sermayesi. \n* Taslak İzahname, Sayfa 182.",
-    "detailUrl": "https://halkarz.com/bulls-yatirim-menkul-degerler-a-s/",
     "status": "upcoming"
   },
   {
