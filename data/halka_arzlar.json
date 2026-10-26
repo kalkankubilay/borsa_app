@@ -1,5 +1,19 @@
 [
   {
+    "id": "flo",
+    "symbol": "FLO",
+    "companyName": "Flo Mağazacılık ve Pazarlama A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "510.000.000 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Yıldız Pazar",
+    "leadManager": "Konsorsiyum Lideri Belirleniyor",
+    "fundUsage": "- %45-55 Yurt içi ve yurt dışı mağaza açılışları, mevcut mağaza ağı modernizasyonu ve teknolojileri yatırımları. \n- %45-55 İşletme sermayesi.  \n* Taslak İzahname, Sayfa 406.",
+    "detailUrl": "https://halkarz.com/flo-magazacilik-ve-pazarlama-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "i̇nter",
     "symbol": "İNTER",
     "companyName": "İnternet Tekstil Sanayii ve Tic. A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Yapı Kredi Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
     "detailUrl": "https://halkarz.com/hedef-grup-satis-dagitim-san-ve-tic-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "sinbo",
-    "symbol": "SINBO",
-    "companyName": "Sinbo Küçük Ev Aletleri San. ve Tic. A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "301.435.772 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Ana Pazar",
-    "leadManager": "Kuveyt Türk Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "- %25 Planlanan yeni yatırımları. \n- %40 İşletme sermayesi. \n- %35 Borçların ödenmesi. \n* Taslak İzahname, Sayfa 222.",
-    "detailUrl": "https://halkarz.com/sinbo-kucuk-ev-aletleri-san-ve-tic-a-s/",
     "status": "upcoming"
   },
   {
