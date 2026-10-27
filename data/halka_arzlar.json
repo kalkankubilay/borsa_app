@@ -1,5 +1,19 @@
 [
   {
+    "id": "dervi",
+    "symbol": "DERVI",
+    "companyName": "Dervişoğlu Bakliyat A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "183.750.000 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Borsa İstanbul",
+    "leadManager": "Global Menkul Değerler A.Ş.",
+    "fundUsage": "- %50-60 Yeni tesis yatırımı ile GES yatırımı. \n- %40-50 İşletme sermayesi. \n* Taslak İzahname, Sayfa 201.",
+    "detailUrl": "https://halkarz.com/dervisoglu-bakliyat-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "flo",
     "symbol": "FLO",
     "companyName": "Flo Mağazacılık ve Pazarlama A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Tacirler Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %30 Yeni mağaza yatırımları. \n- %45 Finansal borç anapara ve faiz ödemeleri. \n- %25 İşletme sermayesi. \n* Taslak İzahname, Sayfa 226.",
     "detailUrl": "https://halkarz.com/anpa-gross-magazacilik-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "hedef",
-    "symbol": "HEDEF",
-    "companyName": "Hedef Grup Satış Dağıtım San. ve Tic. A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "60.000.000 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Borsa İstanbul",
-    "leadManager": "Yapı Kredi Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
-    "detailUrl": "https://halkarz.com/hedef-grup-satis-dagitim-san-ve-tic-a-s/",
     "status": "upcoming"
   },
   {
