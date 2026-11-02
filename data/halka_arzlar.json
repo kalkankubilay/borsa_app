@@ -1,5 +1,19 @@
 [
   {
+    "id": "tezma",
+    "symbol": "TEZMA",
+    "companyName": "Tezmaksan Makina San. ve Tic. A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "150.000.000 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Yıldız Pazar",
+    "leadManager": "İntegral Yatırım Menkul Değerler A.Ş.",
+    "fundUsage": "- %30 Yatırım harcamaları. \n- %40 İşletme sermayesi. \n- %30 Finansal borçların ödenmesi. \n* Taslak İzahname, Sayfa 243.",
+    "detailUrl": "https://halkarz.com/tezmaksan-makina-san-ve-tic-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "dervi",
     "symbol": "DERVI",
     "companyName": "Dervişoğlu Bakliyat A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Vakıf Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %60-70 Yatırımların finansmanı. \n- %30-40 İşletme sermayesi. \n* Taslak İzahname, Sayfa 181.",
     "detailUrl": "https://halkarz.com/hestas-madencilik-petrol-insaat-haritacilik-tic-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "anpa",
-    "symbol": "ANPA",
-    "companyName": "Anpa Gross Mağazacılık A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "160.000.000 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Borsa İstanbul",
-    "leadManager": "Tacirler Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "- %30 Yeni mağaza yatırımları. \n- %45 Finansal borç anapara ve faiz ödemeleri. \n- %25 İşletme sermayesi. \n* Taslak İzahname, Sayfa 226.",
-    "detailUrl": "https://halkarz.com/anpa-gross-magazacilik-a-s/",
     "status": "upcoming"
   },
   {
