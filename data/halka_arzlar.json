@@ -1,5 +1,19 @@
 [
   {
+    "id": "simpr",
+    "symbol": "SIMPR",
+    "companyName": "Simpro Elektronik Kart Üretim San. ve Tic. A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "80.000.000 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Borsa İstanbul",
+    "leadManager": "Halk Yatırım Menkul Değerler A.Ş.",
+    "fundUsage": "- %65 İşletme sermayesi. \n- %65 Yatırım ihtiyaçlarının finansmanı. \n- %15 Finansal borçluluğun azaltılması. \n* Taslak İzahname, Sayfa 185.",
+    "detailUrl": "https://halkarz.com/simpro-elektronik-kart-uretim-san-ve-tic-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "tezma",
     "symbol": "TEZMA",
     "companyName": "Tezmaksan Makina San. ve Tic. A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "İntegral Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %50 Ticari satın almalar ve operasyonel verimlilik yatırımları. \n- %20 Lojistik altyapısının güçlendirilmesi ve pazarlama faaliyetleri. \n- %10 Özel markalı ürün portföyünün geliştirilmesine yönelik yatırımlar. \n- %20 Finansal yapının güçlendirilmesi. \n* Taslak İzahname, Sayfa 230.",
     "detailUrl": "https://halkarz.com/motor-asin-otomotiv-bilgisayar-san-ve-tic-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "hesta",
-    "symbol": "HESTA",
-    "companyName": "Hestaş Madencilik Petrol İnşaat Haritacılık Tic. A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "170.000.000 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Borsa İstanbul",
-    "leadManager": "Vakıf Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "- %60-70 Yatırımların finansmanı. \n- %30-40 İşletme sermayesi. \n* Taslak İzahname, Sayfa 181.",
-    "detailUrl": "https://halkarz.com/hestas-madencilik-petrol-insaat-haritacilik-tic-a-s/",
     "status": "upcoming"
   },
   {
