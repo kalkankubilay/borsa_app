@@ -1,5 +1,19 @@
 [
   {
+    "id": "tarim",
+    "symbol": "TARIM",
+    "companyName": "Tarım Kredi Yem San. ve Tic. A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "39.000.000 Lot",
+    "distributionMethod": "Eşit Dağıtım **",
+    "market": "Borsa İstanbul",
+    "leadManager": "Konsorsiyum Lideri Belirleniyor",
+    "fundUsage": "- %30 Planlanan yatırım harcamalarının finansmanı ve tesislerin revizyonu. \n- %70 İşletme sermayesi. \n* Taslak İzahname, Sayfa 200.",
+    "detailUrl": "https://halkarz.com/tarim-kredi-yem-san-ve-tic-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "simpr",
     "symbol": "SIMPR",
     "companyName": "Simpro Elektronik Kart Üretim San. ve Tic. A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Ak Yatırım Menkul Değerler A.Ş.",
     "fundUsage": "- %50 Büyüme yatırımları. \n- %50 Finansal borçluluğun azaltılması. \n* Taslak İzahname, Sayfa 223.",
     "detailUrl": "https://halkarz.com/pronet-guvenlik-hizmetleri-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "motor",
-    "symbol": "MOTOR",
-    "companyName": "Motor Aşin Otomotiv Bilgisayar San. ve Tic. A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "186.798.000 Lot",
-    "distributionMethod": "Eşit Dağıtım **",
-    "market": "Borsa İstanbul",
-    "leadManager": "İntegral Yatırım Menkul Değerler A.Ş.",
-    "fundUsage": "- %50 Ticari satın almalar ve operasyonel verimlilik yatırımları. \n- %20 Lojistik altyapısının güçlendirilmesi ve pazarlama faaliyetleri. \n- %10 Özel markalı ürün portföyünün geliştirilmesine yönelik yatırımlar. \n- %20 Finansal yapının güçlendirilmesi. \n* Taslak İzahname, Sayfa 230.",
-    "detailUrl": "https://halkarz.com/motor-asin-otomotiv-bilgisayar-san-ve-tic-a-s/",
     "status": "upcoming"
   },
   {
