@@ -1,5 +1,19 @@
 [
   {
+    "id": "şahin",
+    "symbol": "ŞAHIN",
+    "companyName": "Şahinler Metal San. ve Tic. A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "Taslak İzahname",
+    "distributionMethod": "Eşit Dağıtım (Taslak)",
+    "market": "Borsa İstanbul",
+    "leadManager": "Konsorsiyum Lideri Belirleniyor",
+    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
+    "detailUrl": "https://halkarz.com/sahinler-metal-san-ve-tic-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "tarim",
     "symbol": "TARIM",
     "companyName": "Tarım Kredi Yem San. ve Tic. A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Konsorsiyum Lideri Belirleniyor",
     "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
     "detailUrl": "https://halkarz.com/divapan-entegre-agac-panel-sanayi-tic-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "prone",
-    "symbol": "PRONE",
-    "companyName": "Pronet Güvenlik Hizmetleri A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "Taslak İzahname",
-    "distributionMethod": "Eşit Dağıtım (Taslak)",
-    "market": "Borsa İstanbul",
-    "leadManager": "Konsorsiyum Lideri Belirleniyor",
-    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
-    "detailUrl": "https://halkarz.com/pronet-guvenlik-hizmetleri-a-s/",
     "status": "upcoming"
   },
   {
