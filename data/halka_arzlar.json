@@ -1,5 +1,19 @@
 [
   {
+    "id": "sayte",
+    "symbol": "SAYTE",
+    "companyName": "Saytek Enerji Geri Dönüşüm Sağlık San. ve Tic. A.Ş.",
+    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
+    "price": "Taslak (Belirleniyor)",
+    "lotCount": "Taslak İzahname",
+    "distributionMethod": "Eşit Dağıtım (Taslak)",
+    "market": "Borsa İstanbul",
+    "leadManager": "Konsorsiyum Lideri Belirleniyor",
+    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
+    "detailUrl": "https://halkarz.com/saytek-enerji-geri-donusum-saglik-san-ve-tic-a-s/",
+    "status": "upcoming"
+  },
+  {
     "id": "burcu",
     "symbol": "BURCU",
     "companyName": "Burcu Gıda Konservecilik ve Salça Sanayi A.Ş.",
@@ -123,20 +137,6 @@
     "leadManager": "Konsorsiyum Lideri Belirleniyor",
     "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
     "detailUrl": "https://halkarz.com/internet-tekstil-sanayii-ve-tic-a-s/",
-    "status": "upcoming"
-  },
-  {
-    "id": "hayri",
-    "symbol": "HAYRI",
-    "companyName": "Hayri Ögelman Madencilik A.Ş.",
-    "dates": "SPK Başvuru Sürecinde (Henüz Talep Toplanmadı)",
-    "price": "Taslak (Belirleniyor)",
-    "lotCount": "Taslak İzahname",
-    "distributionMethod": "Eşit Dağıtım (Taslak)",
-    "market": "Borsa İstanbul",
-    "leadManager": "Konsorsiyum Lideri Belirleniyor",
-    "fundUsage": "• Şirketin taslak izahnamesi incelenmekte olup SPK onay bülteni beklenmektedir.",
-    "detailUrl": "https://halkarz.com/hayri-ogelman-madencilik-a-s/",
     "status": "upcoming"
   },
   {
